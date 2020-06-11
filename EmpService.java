@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.example.demo.repository.EmpRepository;
 import org.springframework.data.domain.PageRequest;
 import com.example.demo.model.Employee;
+import java.lang.Override;
 
 
 @Service
@@ -21,11 +22,10 @@ public class EmpService {
 
 	
 	
-	/*
-	 * public List<Employee> getAllEmployesPageReq(int pageNumber, int pageSize) {
-	 * return empRepository.findAll(new
-	 * PageRequest(pageNumber,pageSize)).getContent(); }
-	 */
+	public List<Employee> getAllEmployesPageReq(int pageNumber, int pageSize) {
+	return empRepository.findAll(new PageRequest(pageNumber,pageSize)).getContent(); 
+	}
+	 
 	/*
 	 * public List<Employee> getFirstNameOrderBy(String firstname){ return
 	 * empRepository.findByFirstnameEndsWith(firstname);
